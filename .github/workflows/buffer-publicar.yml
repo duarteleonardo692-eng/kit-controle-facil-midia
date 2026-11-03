@@ -1,6 +1,9 @@
 name: Kit Controle Facil - GitHub para Buffer
 
 on:
+  push:
+    paths:
+      - ".github/workflows/buffer-publicar.yml"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -9,8 +12,6 @@ on:
         default: true
         type: boolean
   schedule:
-    # Todos os dias às 09:00 de Brasília (12:00 UTC). 
-    # Processa apenas vídeos aprovados e ainda não encontrados no Buffer.
     - cron: "0 12 * * *"
 
 permissions:
@@ -22,14 +23,20 @@ concurrency:
 
 jobs:
   enviar-para-buffer:
-    name: Checar duplicações e agendar vídeos
+    name: Validar canais, MP4 e duplicações
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      # Durante a homologação, execuções automáticas sempre simulam.
+      # Uma execução manual com dry_run desmarcado envia à fila.
+      DRY_RUN: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run }}
     steps:
       - name: Obter vídeos aprovados
         uses: actions/checkout@v4
-      - name: Conferir mídia e posts existentes no Buffer
+      - name: Validar Python e catálogo
+        run: |
+          python3 -m py_compile automation/buffer_publish.py
+          python3 -m json.tool automation/posts.json > /dev/null
+      - name: Consultar Buffer e simular agendamento
         run: python3 automation/buffer_publish.py
