@@ -144,8 +144,7 @@ def create_buffer_post(token, channel_id, service, item, url):
 def main():
     token = os.environ.get("BUFFER_API_KEY", "").strip()
     if not token:
-        print("NÃO ATIVADO: configure o secret BUFFER_API_KEY neste repositório.")
-        return 0
+        raise RuntimeError("Chave BUFFER_API_KEY não encontrada nos Secrets do GitHub Actions.")
     dry_run = os.environ.get("DRY_RUN", "true").lower() != "false"
     manifest = json.loads(Path("automation/posts.json").read_text(encoding="utf-8"))
     items = [p for p in manifest["posts"] if p.get("approved") is True and p.get("enabled") is True]
