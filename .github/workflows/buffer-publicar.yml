@@ -28,9 +28,9 @@ jobs:
     timeout-minutes: 10
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-      # Teste seguro de credencial: execuções automáticas sempre simulam.
-      # Uma execução manual com dry_run desmarcado envia à fila.
-      DRY_RUN: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run }}
+      # Ativado: publicações automáticas apenas para vídeos marcados como aprovados.
+      # Uma execução manual com dry_run=true continua sendo apenas teste.
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
     steps:
       - name: Obter vídeos aprovados
         uses: actions/checkout@v4
