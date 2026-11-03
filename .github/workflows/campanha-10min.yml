@@ -11,12 +11,12 @@ concurrency:
   cancel-in-progress: false
 jobs:
   campanha:
-    name: Agendar mídias inéditas a cada 10 minutos
+    name: Conferir campanha agendada sem novos envios
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-      DRY_RUN: "false"
+      DRY_RUN: "true"
     steps:
       - uses: actions/checkout@v4
       - name: Instalar FFmpeg para validar os vídeos
@@ -25,7 +25,7 @@ jobs:
         run: |
           python3 -m py_compile automation/buffer_campaign.py
           python3 -m json.tool automation/campanha-03nov.json > /dev/null
-      - name: Conferir duplicações e agendar campanha aprovada
+      - name: Conferir os 14 agendamentos sem criar duplicações
         run: python3 automation/buffer_campaign.py
       - name: Salvar IDs dos posts na proteção anti-duplicação
         if: always()
