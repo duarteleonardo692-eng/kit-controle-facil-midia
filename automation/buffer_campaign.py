@@ -33,7 +33,7 @@ def check_file(item):
     with path.open("rb") as handle:
         header = handle.read(32)
     if item["kind"] == "post":
-        if not file_name.endswith(".png") or header[:8] != b"\\x89PNG\\r\\n\\x1a\\n":
+        if not file_name.endswith(".png") or header[:8] != bytes((137,80,78,71,13,10,26,10)):
             raise RuntimeError("Post estático não é PNG: " + file_name)
         width, height = struct.unpack(">II", header[16:24])
         if min(width, height) < 600:
