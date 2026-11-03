@@ -1,0 +1,28 @@
+name: Kit Controle Facil - Gerar imagem para Feed
+on:
+  push:
+    paths:
+      - ".github/workflows/gerar-post-feed.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  arte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install --quiet pillow
+      - name: Gerar imagem PNG
+        run: python3 automation/create_feed_art.py
+      - name: Publicar arte no repositorio de midia
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/post-checklist-controle-financeiro.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Adicionar post checklist de gestão para feed Instagram"
+            git push
+          else
+            echo "Arte já atualizada"
+          fi
