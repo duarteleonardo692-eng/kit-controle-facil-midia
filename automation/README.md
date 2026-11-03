@@ -28,3 +28,10 @@ Esta rotina **não altera o site**, não usa Metricool e não exige abrir o Buff
 - O Buffer decide os horários reais na fila. `addToQueue` não significa publicação instantânea.
 - Novos vídeos exigem inclusão explícita no manifesto com `approved: true`; a automação **não** publica indiscriminadamente os outros vídeos existentes.
 - A rotina não apaga, modifica nem atualiza posts existentes ou arquivos de site.
+
+
+## Diagnóstico da primeira execução — 02/11/2026
+
+A execução de homologação disparada automaticamente por uma alteração no workflow validou a sintaxe Python e o catálogo, mas bloqueou a integração porque a variável `BUFFER_API_KEY` estava vazia no ambiente do GitHub Actions. Isso não significa que a chave não exista no Buffer: é necessário cadastrá-la também como **Repository secret** com o nome exato `BUFFER_API_KEY`.
+
+A execução automática agendada permanece em **simulação (DRY_RUN=true)** até a validação real com o Buffer. A opção manual `dry_run=false` cria posts de verdade; utilize apenas depois que uma simulação tiver terminado com sucesso.
