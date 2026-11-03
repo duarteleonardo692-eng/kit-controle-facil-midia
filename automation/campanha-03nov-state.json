@@ -1,4 +1,75 @@
 {
   "version": 1,
-  "records": {}
+  "records": {
+    "reels03-estoque:tiktok": {
+      "id": "6ae936876f053cdb90b526fa",
+      "dueAt": "2026-11-03T12:00:00.000Z",
+      "origin": "campaign"
+    },
+    "reels04-barbearias:tiktok": {
+      "id": "6ae936876f053cdb90b52755",
+      "dueAt": "2026-11-03T12:10:00.000Z",
+      "origin": "campaign"
+    },
+    "reels05-lojas-mercados:tiktok": {
+      "id": "6ae93688186a5afbce777116",
+      "dueAt": "2026-11-03T12:20:00.000Z",
+      "origin": "campaign"
+    },
+    "reels06-autonomos:instagram": {
+      "id": "6ae936880d3397810d05422e",
+      "dueAt": "2026-11-03T12:00:00.000Z",
+      "origin": "campaign"
+    },
+    "reels06-autonomos:tiktok": {
+      "id": "6ae936895d11dd638e98d808",
+      "dueAt": "2026-11-03T12:30:00.000Z",
+      "origin": "campaign"
+    },
+    "reels07-saloes:instagram": {
+      "id": "6ae93689186a5afbce7771c3",
+      "dueAt": "2026-11-03T12:10:00.000Z",
+      "origin": "campaign"
+    },
+    "reels07-saloes:tiktok": {
+      "id": "6ae9368a6f053cdb90b52848",
+      "dueAt": "2026-11-03T12:40:00.000Z",
+      "origin": "campaign"
+    },
+    "reels08-oficinas:instagram": {
+      "id": "6ae9368b5d11dd638e98d8b4",
+      "dueAt": "2026-11-03T12:20:00.000Z",
+      "origin": "campaign"
+    },
+    "reels08-oficinas:tiktok": {
+      "id": "6ae9368b7996caf141c30d71",
+      "dueAt": "2026-11-03T12:50:00.000Z",
+      "origin": "campaign"
+    },
+    "reels11-produtos-servicos:instagram": {
+      "id": "6ae9368c6f053cdb90b528fe",
+      "dueAt": "2026-11-03T12:30:00.000Z",
+      "origin": "campaign"
+    },
+    "reels11-produtos-servicos:tiktok": {
+      "id": "6ae9368c08a182357fa79df8",
+      "dueAt": "2026-11-03T13:00:00.000Z",
+      "origin": "campaign"
+    },
+    "apresentacao-legendas-corrigidas:tiktok": {
+      "id": "6ae9368d0d3397810d05439a",
+      "dueAt": "2026-11-03T13:10:00.000Z",
+      "origin": "campaign"
+    },
+    "story11-produtos-servicos:instagram": {
+      "id": "6ae9368d0d3397810d0543ce",
+      "dueAt": "2026-11-03T12:40:00.000Z",
+      "origin": "campaign"
+    },
+    "post-checklist-controle-financeiro:instagram": {
+      "id": "6ae9368e5d11dd638e98da49",
+      "dueAt": "2026-11-03T12:50:00.000Z",
+      "origin": "campaign"
+    }
+  }
 }
