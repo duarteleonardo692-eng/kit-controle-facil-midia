@@ -1,0 +1,35 @@
+name: Kit Controle Facil - Auditoria de publicacoes Buffer
+
+on:
+  push:
+    paths:
+      - ".github/workflows/buffer-auditoria.yml"
+  workflow_dispatch:
+  schedule:
+    # 09h30 e 20h30 de Brasília (horários UTC, Brasil sem horário de verão).
+    # Conferência após os horários programados de publicação.
+    - cron: "30 12,23 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kit-controle-facil-auditoria
+  cancel-in-progress: false
+
+jobs:
+  auditar-buffer:
+    name: Verificar publicações sem republicar vídeos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Obter arquivos do projeto
+        uses: actions/checkout@v4
+      - name: Validar scripts e testar cenários de falha
+        run: |
+          python3 -m py_compile automation/buffer_publish.py automation/buffer_audit.py
+          python3 -m unittest discover -s automation -p "test_buffer_audit.py" -v
+      - name: Auditar Instagram e TikTok no Buffer (somente leitura)
+        run: python3 automation/buffer_audit.py
