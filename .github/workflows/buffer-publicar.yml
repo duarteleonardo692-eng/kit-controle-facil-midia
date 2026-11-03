@@ -38,5 +38,5 @@ jobs:
         run: |
           python3 -m py_compile automation/buffer_publish.py
           python3 -m json.tool automation/posts.json > /dev/null
-      - name: Consultar Buffer e simular agendamento
+      - name: Verificar Buffer e agendar apenas vídeos sem duplicação
         run: python3 automation/buffer_publish.py
