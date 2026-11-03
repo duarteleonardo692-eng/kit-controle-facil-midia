@@ -60,3 +60,17 @@ Primeira execução: https://github.com/duarteleonardo692-eng/kit-controle-facil
 **Limitação:** `sent` confirma publicação conforme a API do Buffer; indisponibilidade de URL pública ou falhas de indexação da rede podem exigir confirmação no destino. O GitHub pode atrasar execuções programadas.
 
 A automação monitora exclusivamente conteúdos autorizados em `automation/posts.json`. Para o próximo vídeo, será necessária aprovação explícita do conteúdo, da legenda e dos canais antes de adicioná-lo com `approved: true`.
+
+## Campanha de 03/11/2026: conteúdos inéditos (10 em 10 minutos)
+
+Programação de 14 posts aceita no Buffer pela execução https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41558874538.
+
+- **TikTok, 8 vídeos:** Reels 03 (09h00), 04 (09h10), 05 (09h20), 06 (09h30), 07 (09h40), 08 (09h50), 11 (10h00) e vídeo de apresentação com legendas corrigidas (10h10).
+- **Instagram, 6 conteúdos:** Reels 06 (09h00), Reels 07 (09h10), Reels 08 (09h20), Reels 11 (09h30), Story 11 (09h40) e post estático original de checklist financeiro (09h50).
+- Horário de Brasília (UTC-3), 3 de novembro de 2026.
+- O Reels 10 já possuía agendamentos em ambas as redes, por isso não foi reprogramado.
+- A demonstração prática já constava como enviada em ambos os canais; outros temas cobertos no histórico do Instagram (estoque, barbearias, lojas/apresentação) foram excluídos por precaução para evitar posts semanticamente repetidos.
+- O controle `automation/campanha-03nov-state.json` registra os 14 IDs criados no Buffer. A execução seguinte em modo seguro não criou novas cópias.
+- A auditoria de rotina verifica o Reels 10 e os 14 IDs da campanha. Primeira execução de auditoria: https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41559149834 — 14 agendados e 0 falhas.
+- A rotina pontual `.github/workflows/campanha-10min.yml` foi desativada para novos envios (`DRY_RUN=true`) após registrar a campanha; os horários permanecem no Buffer.
+- Limitação do plano Free: máximo de 10 posts na fila por canal; foram utilizados 9 slots no TikTok, 7 no Instagram, incluindo Reels 10. A plataforma pode recusar publicações posteriores por outros motivos; confira a auditoria no dia.
