@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 10
     env:
       BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
-      # Durante a homologação, execuções automáticas sempre simulam.
+      # Teste seguro de credencial: execuções automáticas sempre simulam.
       # Uma execução manual com dry_run desmarcado envia à fila.
       DRY_RUN: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run }}
     steps:
