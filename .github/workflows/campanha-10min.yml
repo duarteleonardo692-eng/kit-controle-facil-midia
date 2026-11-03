@@ -19,6 +19,8 @@ jobs:
       DRY_RUN: "true"
     steps:
       - uses: actions/checkout@v4
+      - name: Instalar FFmpeg para validar os vídeos
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Validar Python e arquivo de campanha
         run: |
           python3 -m py_compile automation/buffer_campaign.py
