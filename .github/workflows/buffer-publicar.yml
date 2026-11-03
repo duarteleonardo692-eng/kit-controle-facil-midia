@@ -1,9 +1,6 @@
 name: Kit Controle Facil - GitHub para Buffer
 
 on:
-  push:
-    paths:
-      - ".github/workflows/buffer-publicar.yml"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -11,9 +8,6 @@ on:
         required: true
         default: true
         type: boolean
-  schedule:
-    - cron: "0 12 * * *"
-
 permissions:
   contents: read
 

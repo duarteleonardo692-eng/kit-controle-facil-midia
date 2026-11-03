@@ -1,8 +1,5 @@
 name: Kit Controle Facil - Gerar imagem para Feed
 on:
-  push:
-    paths:
-      - ".github/workflows/gerar-post-feed.yml"
   workflow_dispatch:
 permissions:
   contents: write

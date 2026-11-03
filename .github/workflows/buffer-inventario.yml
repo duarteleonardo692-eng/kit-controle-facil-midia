@@ -1,8 +1,5 @@
 name: Kit Controle Facil - Inventario de publicacoes
 on:
-  push:
-    paths:
-      - ".github/workflows/buffer-inventario.yml"
   workflow_dispatch:
 permissions:
   contents: read

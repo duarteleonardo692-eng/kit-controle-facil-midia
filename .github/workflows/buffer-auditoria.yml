@@ -1,15 +1,7 @@
 name: Kit Controle Facil - Auditoria de publicacoes Buffer
 
 on:
-  push:
-    paths:
-      - ".github/workflows/buffer-auditoria.yml"
   workflow_dispatch:
-  schedule:
-    # 09h30 e 20h30 de Brasília (horários UTC, Brasil sem horário de verão).
-    # Conferência após os horários programados de publicação.
-    - cron: "30 12,23 * * *"
-
 permissions:
   contents: read
 

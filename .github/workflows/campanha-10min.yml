@@ -1,8 +1,5 @@
 name: Kit Controle Facil - Campanha 10 minutos
 on:
-  push:
-    paths:
-      - ".github/workflows/campanha-10min.yml"
   workflow_dispatch:
 permissions:
   contents: write
