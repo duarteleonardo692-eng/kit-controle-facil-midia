@@ -34,4 +34,12 @@ Esta rotina **não altera o site**, não usa Metricool e não exige abrir o Buff
 
 A execução de homologação disparada automaticamente por uma alteração no workflow validou a sintaxe Python e o catálogo, mas bloqueou a integração porque a variável `BUFFER_API_KEY` estava vazia no ambiente do GitHub Actions. Isso não significa que a chave não exista no Buffer: é necessário cadastrá-la também como **Repository secret** com o nome exato `BUFFER_API_KEY`.
 
-A execução automática agendada permanece em **simulação (DRY_RUN=true)** até a validação real com o Buffer. A opção manual `dry_run=false` cria posts de verdade; utilize apenas depois que uma simulação tiver terminado com sucesso.
+A execução diária está **ativa** e verifica/publica somente conteúdos explicitamente aprovados no catálogo. A opção manual `dry_run=true` faz apenas simulação. A execução sem `dry_run` coloca posts na fila do Buffer.
+
+
+## Homologação e ativação verificadas — 02/11/2026
+
+- A chave em GitHub Secrets foi reconhecida na execução [41556497756](https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41556497756).
+- A execução [41556668653](https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41556668653) criou o Reels 10 no Buffer, uma vez para cada canal: Instagram `6ae931e85d11dd638e97506f` (03/11/2026 às 18h41 de Brasília) e TikTok `6ae931e9186a5afbce75f0ae` (03/11/2026 às 06h49 de Brasília).
+- A segunda execução [41556745209](https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41556745209) encontrou os posts existentes e ignorou ambos, validando o bloqueio de duplicações.
+- Esses status são agendamentos do Buffer, não comprovantes de publicação final nas redes sociais. Verifique a aba Sent após o horário.
