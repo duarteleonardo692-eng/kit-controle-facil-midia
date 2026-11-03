@@ -1,0 +1,35 @@
+name: Kit Controle Facil - GitHub para Buffer
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simular sem criar posts (desmarque para enviar à fila)"
+        required: true
+        default: true
+        type: boolean
+  schedule:
+    # Todos os dias às 09:00 de Brasília (12:00 UTC). 
+    # Processa apenas vídeos aprovados e ainda não encontrados no Buffer.
+    - cron: "0 12 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kit-controle-facil-buffer
+  cancel-in-progress: false
+
+jobs:
+  enviar-para-buffer:
+    name: Checar duplicações e agendar vídeos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+    steps:
+      - name: Obter vídeos aprovados
+        uses: actions/checkout@v4
+      - name: Conferir mídia e posts existentes no Buffer
+        run: python3 automation/buffer_publish.py
