@@ -31,5 +31,7 @@ jobs:
         run: |
           python3 -m py_compile automation/buffer_publish.py automation/buffer_audit.py
           python3 -m unittest discover -s automation -p "test_buffer_audit.py" -v
-      - name: Auditar Instagram e TikTok no Buffer (somente leitura)
+      - name: Auditar Reels 10 no Buffer (somente leitura)
         run: python3 automation/buffer_audit.py
+      - name: Auditar os 14 novos agendamentos sem republicar
+        run: python3 automation/buffer_campaign_check.py
