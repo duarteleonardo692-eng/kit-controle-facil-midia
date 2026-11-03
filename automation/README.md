@@ -43,3 +43,20 @@ A execução diária está **ativa** e verifica/publica somente conteúdos expli
 - A execução [41556668653](https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41556668653) criou o Reels 10 no Buffer, uma vez para cada canal: Instagram `6ae931e85d11dd638e97506f` (03/11/2026 às 18h41 de Brasília) e TikTok `6ae931e9186a5afbce75f0ae` (03/11/2026 às 06h49 de Brasília).
 - A segunda execução [41556745209](https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41556745209) encontrou os posts existentes e ignorou ambos, validando o bloqueio de duplicações.
 - Esses status são agendamentos do Buffer, não comprovantes de publicação final nas redes sociais. Verifique a aba Sent após o horário.
+
+
+## Auditoria automática de publicação
+
+A rotina de auditoria `.github/workflows/buffer-auditoria.yml` roda separadamente do publicador, diariamente às **09h30 e 20h30 de Brasília**. Ela usa o mesmo secret `BUFFER_API_KEY` e executa `automation/buffer_audit.py`, sem criar ou alterar posts.
+
+- `AGUARDANDO`: o Buffer ainda mantém o vídeo na fila, antes de vencer o horário e a tolerância de 2 horas.
+- `OK`: o Buffer confirma o estado `sent`; quando disponível, o relatório traz a URL pública.
+- `ERRO`: há falha no Buffer, publicação ainda não enviada após a tolerância, vídeo ausente ou possível duplicação. A execução do GitHub Actions termina em falha.
+
+Relatório no GitHub: https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/workflows/buffer-auditoria.yml
+
+Primeira execução: https://github.com/duarteleonardo692-eng/kit-controle-facil-midia/actions/runs/41557278942 — **sucesso**. Os seis testes automatizados passaram e o Buffer confirmou o Reels 10 agendado no Instagram e TikTok.
+
+**Limitação:** `sent` confirma publicação conforme a API do Buffer; indisponibilidade de URL pública ou falhas de indexação da rede podem exigir confirmação no destino. O GitHub pode atrasar execuções programadas.
+
+A automação monitora exclusivamente conteúdos autorizados em `automation/posts.json`. Para o próximo vídeo, será necessária aprovação explícita do conteúdo, da legenda e dos canais antes de adicioná-lo com `approved: true`.
