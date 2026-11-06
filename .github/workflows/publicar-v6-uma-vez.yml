@@ -1,3 +1,4 @@
+# Correção: publicar Facebook como Reel; reexecução idempotente.
 name: Kit Controle Facil - Publicar Comercial V6 Uma Vez
 on:
   push:

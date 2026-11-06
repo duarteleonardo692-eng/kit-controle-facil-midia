@@ -71,7 +71,9 @@ def check_remote():
 
 def post(token, service, channel_id):
     extra = ""
-    if service == "instagram":
+    if service == "facebook":
+        extra = "metadata: { facebook: { type: reel } }"
+    elif service == "instagram":
         extra = "metadata: { instagram: { type: reel, shouldShareToFeed: true, isAiGenerated: true } }"
     elif service == "tiktok":
         extra = "metadata: { tiktok: { isAiGenerated: true } }"
