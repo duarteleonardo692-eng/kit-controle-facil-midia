@@ -104,8 +104,9 @@ def main():
         if svc not in found:
             print(f"INACESSÍVEL: {svc} não foi identificado como canal autorizado do Buffer")
             continue
-        if any(is_duplicate(p, ITEM) for p in histories[svc]):
-            print(f"JÁ EXISTE: {svc}, envio ignorado")
+        duplicate = next((p for p in histories[svc] if is_duplicate(p, ITEM)), None)
+        if duplicate:
+            print(f"JÁ EXISTE: {svc}, id={duplicate.get('id')}, status={duplicate.get('status')}, envio ignorado")
             continue
         try:
             response = post(token, svc, found[svc]["id"])
