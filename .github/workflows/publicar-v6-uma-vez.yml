@@ -1,0 +1,50 @@
+name: Kit Controle Facil - Publicar Comercial V6 Uma Vez
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publicar-v6-uma-vez.yml'
+      - 'automation/media_v6_parts/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kit-controle-facil-buffer
+  cancel-in-progress: false
+jobs:
+  publicar-v6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruir e verificar MP4
+        shell: bash
+        run: |
+          mkdir -p assets
+          cat automation/media_v6_parts/part-*.b64 | base64 -d > assets/kit-controle-facil-comercial-v6-final-sincronizado.mp4
+          echo 'e1eee3be21ac251e360b4a98bb70fa3dfac2b664053e462f23e4d84efbde4247  assets/kit-controle-facil-comercial-v6-final-sincronizado.mp4' | sha256sum -c -
+          python3 -m py_compile automation/buffer_publish.py automation/buffer_publicar_v6.py
+          python3 - <<'PY'
+          import pathlib
+          f=pathlib.Path('assets/kit-controle-facil-comercial-v6-final-sincronizado.mp4')
+          assert f.stat().st_size == 6421020
+          assert f.read_bytes()[4:8] == b'ftyp'
+          print('Vídeo reconstruído e cabeçalho MP4 verificados')
+          PY
+      - name: Disponibilizar vídeo original no GitHub
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/kit-controle-facil-comercial-v6-final-sincronizado.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m 'Adicionar comercial Kit Controle Facil V6 validado para publicacao'
+            git push origin HEAD:main
+          fi
+      - name: Publicar somente V6 nos canais corretos via Buffer
+        run: python3 automation/buffer_publicar_v6.py
