@@ -1,0 +1,56 @@
+name: Kit Controle Facil - Publicar Comercial V14 Uma Vez
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'publish_requests/v14-2026-11-07.txt'
+permissions:
+  contents: write
+concurrency:
+  group: kit-controle-facil-v14-uma-vez
+  cancel-in-progress: false
+jobs:
+  publicar-v14:
+    name: Verificar MP4, duplicatas e publicar V14
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Preparar arquivo V14 do Drive
+        run: |
+          set -euo pipefail
+          FILE='assets/kit-controle-facil-um-dia-mais-leve-v14.mp4'
+          EXPECTED='f6819b8651053c8e4dd14e7eaeefb9db9f8f4b4cf9e9c1850c81714711ac9f0f'
+          if [ ! -f "$FILE" ]; then
+            python3 -m pip install --quiet --disable-pip-version-check 'gdown==5.2.0'
+            gdown --id '1wok6UOGhvgeahxf6ZQkFUV5HnWPkddpN' -O "$FILE"
+          fi
+          ACTUAL="$(sha256sum "$FILE" | cut -d' ' -f1)"
+          if [ "$ACTUAL" != "$EXPECTED" ]; then
+            echo 'BLOQUEADO: MP4 baixado diferente do V14 aprovado.' >&2
+            exit 1
+          fi
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('assets/kit-controle-facil-um-dia-mais-leve-v14.mp4')
+          with p.open('rb') as f: header=f.read(16)
+          assert header[4:8]==b'ftyp', 'Arquivo nao e MP4'
+          print('Arquivo V14 validado.')
+          PY
+      - name: Publicar MP4 no repositorio sem duplicar
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'assets/kit-controle-facil-um-dia-mais-leve-v14.mp4'
+          if ! git diff --cached --quiet; then
+            git commit -m 'Adicionar comercial V14 aprovado para publicacao via Buffer'
+            git push origin HEAD:main
+          fi
+      - name: Conferir Buffer e publicar apenas canais sem copia
+        run: |
+          python3 -m py_compile automation/buffer_publicar_v14.py
+          python3 automation/buffer_publicar_v14.py
