@@ -1,6 +1,7 @@
-PUBLICAR AGORA — autorizado pelo proprietário em 2026-11-07 (horário de Brasília).
-Vídeos aprovados: despesas-sem-sustos-fullhd e quanto-entrou-hoje-musica.
-Redes: Facebook, Instagram e TikTok.
-Modo: shareNow (envio imediato), sem duplicar publicações existentes.
-Pré-condições: validar integridade de ambos MP4, URL pública e histórico de cada canal antes de qualquer envio.
-Se qualquer pré-condição falhar, bloquear e registrar a falha sem publicar.
+DISPARO UNICO DE RECUPERACAO DOS DOIS COMERCIAIS DE 07/11/2026
+Autorizacao do proprietario: publicar imediatamente apos verificacao dos dois MP4 e consulta anti-duplicatas nas tres redes.
+Midias originais do Drive permanecem privadas. Os MP4 sao remontados de staging-dupla-07nov-media no GitHub publico.
+Despesas sem Sustos: SHA256 7b729821695f1f90f5d27017e42d3f811920e491d0f5f04e6632e3dea76a05db
+Quanto Entrou Hoje?: SHA256 064f2bbf7ccbfc8a7bcac6dd72eaa7e86b59aef777a18e4291d5afcc51050419
+Destinos: Facebook, Instagram e TikTok (Buffer), mode shareNow, verificar historico ANTES de criar post.
+Nao repetir o disparo se a execucao for incierta: verificar resultado no GitHub e no Buffer antes.
