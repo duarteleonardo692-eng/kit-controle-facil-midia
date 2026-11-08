@@ -1,0 +1,57 @@
+name: Importar comercial revisado 16s aprovado
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/importar-comercial-revisado-8598.yml']
+permissions:
+  contents: write
+concurrency:
+  group: importar-comercial-revisado-8598
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0, persist-credentials: true}
+      - name: Verificar hash da mídia antes de hospedar
+        env:
+          SOURCE_URL: https://d2jqrm6oza8nb6.cloudfront.net/datasets/8e93c36a-a18d-463a-a314-ad05627f5245.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOWQyNjgwZTY2NmEyMThjOCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDIzMjY3OH0.YP-k9ecYGPq8G3sy38s9cRg8N0AuZKHcEMeWyqoWvxc
+          EXPECTED_SHA256: 8598c1f90694004da3f5c07114e4acec1844ec169adbc8af7a0061cce9d4f765
+          DESTINATION: reels/kit-controle-facil-comercial-revisado-8598c1f9.mp4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p reels
+          python - <<'PY'
+          import hashlib, os, urllib.request
+          from pathlib import Path
+          req=urllib.request.Request(os.environ['SOURCE_URL'],headers={'User-Agent':'KitControleFacil-GitHub-MediaImport/1.0'})
+          with urllib.request.urlopen(req,timeout=80) as r:
+            data=r.read(13_000_000)
+            if r.status!=200:
+              raise SystemExit('IMPORTAÇÃO BLOQUEADA: resposta HTTP inválida')
+          expected=os.environ['EXPECTED_SHA256']
+          actual=hashlib.sha256(data).hexdigest()
+          if len(data)!=9157806 or data[4:8]!=b'ftyp' or actual!=expected:
+            raise SystemExit('IMPORTAÇÃO BLOQUEADA: bytes MP4 diferentes do vídeo aprovado')
+          dest=Path(os.environ['DESTINATION'])
+          if dest.exists() and hashlib.sha256(dest.read_bytes()).hexdigest()!=expected:
+            raise SystemExit('IMPORTAÇÃO BLOQUEADA: arquivo existente divergente')
+          dest.write_bytes(data)
+          print('VÍDEO APROVADO VALIDADO: tamanho 9157806, hash',actual)
+          PY
+      - name: Registrar MP4 sem duplicar
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reels/kit-controle-facil-comercial-revisado-8598c1f9.mp4
+          if git diff --cached --quiet; then
+            echo "MP4 idêntico já estava disponível; nenhuma nova alteração"
+            exit 0
+          fi
+          git commit -m "media: novo comercial revisado 16s validado por SHA-256"
+          git push origin HEAD:main
