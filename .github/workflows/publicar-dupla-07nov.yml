@@ -19,17 +19,20 @@ jobs:
     steps:
       - name: Obter repositorio
         uses: actions/checkout@v4
-      - name: Baixar os dois MP4 aprovados
+      - name: Remontar os dois MP4 aprovados a partir de partes no GitHub
+        shell: bash
         run: |
           set -euo pipefail
-          python3 -m pip install --quiet --disable-pip-version-check 'gdown==5.2.0'
+          git fetch --no-tags --depth=1 origin '+refs/heads/staging-dupla-07nov-media:refs/remotes/origin/staging-dupla-07nov-media'
           mkdir -p assets
-          if [ ! -f assets/kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4 ]; then
-            gdown --id '12wXE54YloxUCfkcooA44zSMj40iswzic' -O assets/kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4
-          fi
-          if [ ! -f assets/kit-controle-facil-quanto-entrou-hoje-musica-20261107.mp4 ]; then
-            gdown --id '1R-szi1hT-TNp_Gmklbq-H4O_EX8Ulee0' -O assets/kit-controle-facil-quanto-entrou-hoje-musica-20261107.mp4
-          fi
+          for i in $(seq 0 9); do
+            printf -v n '%03d' "$i"
+            git show "refs/remotes/origin/staging-dupla-07nov-media:staging/dupla-07nov/despesas/part${n}.b64"
+          done | base64 --decode > assets/kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4
+          for i in $(seq 0 11); do
+            printf -v n '%03d' "$i"
+            git show "refs/remotes/origin/staging-dupla-07nov-media:staging/dupla-07nov/quanto/part${n}.b64"
+          done | base64 --decode > assets/kit-controle-facil-quanto-entrou-hoje-musica-20261107.mp4
           echo '7b729821695f1f90f5d27017e42d3f811920e491d0f5f04e6632e3dea76a05db  assets/kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4' | sha256sum -c -
           echo '064f2bbf7ccbfc8a7bcac6dd72eaa7e86b59aef777a18e4291d5afcc51050419  assets/kit-controle-facil-quanto-entrou-hoje-musica-20261107.mp4' | sha256sum -c -
       - name: Hospedar video publico no GitHub
