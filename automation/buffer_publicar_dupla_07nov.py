@@ -12,7 +12,6 @@ from buffer_publish import query_graphql, fetch_posts, gql_string, is_duplicate
 
 REPO = "duarteleonardo692-eng/kit-controle-facil-midia"
 SITE = "https://kit-controle-facil-site.pages.dev/"
-REPO = "duarteleonardo692-eng/kit-controle-facil-midia"
 ITEMS = [
     {
         "file": "assets/kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4",
@@ -45,7 +44,6 @@ EXPECTED = {
     "instagram": "6ae904cfe29c69a1713f2ad8",
     "tiktok": "6ae904e9e29c69a1713f2ba9",
 }
-ITEM = {"marker": MARKER, "file": FILE, "legacy_phrase": ""}
 
 def normalize(s):
     return "".join(c for c in unicodedata.normalize("NFKD", str(s or "").casefold())
