@@ -1,0 +1,58 @@
+{
+  "audited_at_utc": "2026-11-08T01:44:33.055937+00:00",
+  "action": "read_only_audit_no_publication",
+  "videos": {
+    "#CFDespesasSemSustos07Nov26": {
+      "video": "kit-controle-facil-despesas-sem-sustos-fullhd-20261107.mp4",
+      "networks": {
+        "facebook": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        },
+        "instagram": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        },
+        "tiktok": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        }
+      }
+    },
+    "#CFQuantoEntrouHoje07Nov26": {
+      "video": "kit-controle-facil-quanto-entrou-hoje-musica-20261107.mp4",
+      "networks": {
+        "facebook": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        },
+        "instagram": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        },
+        "tiktok": {
+          "status": "found",
+          "post_count": 1,
+          "post_statuses": [
+            "sent"
+          ]
+        }
+      }
+    }
+  }
+}
