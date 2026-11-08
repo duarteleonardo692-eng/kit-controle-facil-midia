@@ -1,0 +1,32 @@
+name: Kit Controle Facil - Auditoria leitura dupla 07nov
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'publish_requests/auditar-dupla-07nov.txt'
+permissions:
+  contents: write
+concurrency:
+  group: auditoria-dupla-07nov
+  cancel-in-progress: false
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Consultar Buffer sem criar nem alterar posts
+        run: |
+          python3 -m py_compile automation/auditar_dupla_07nov.py
+          python3 automation/auditar_dupla_07nov.py
+      - name: Salvar relatorio sem tokens nem legendas
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/dupla-07nov-buffer.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Registrar status real dos dois videos no Buffer (auditoria somente leitura)'
+            git push origin HEAD:main
+          fi
