@@ -1,0 +1,2 @@
+Executar auditoria somente leitura no Buffer apos o primeiro envio da dupla 07nov.
+Nao publicar, agendar ou editar posts nesta auditoria. Somente registrar se cada video aparece no historico e seu status.
