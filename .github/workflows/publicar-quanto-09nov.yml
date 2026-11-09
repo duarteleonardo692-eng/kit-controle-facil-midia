@@ -1,0 +1,61 @@
+name: Kit Controle Facil - Publicar Quanto Entrou Final 09 Nov
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publicar-quanto-09nov.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kit-controle-facil-quanto-final-09nov
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    name: Validar video final e publicar via Buffer sem duplicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Baixar e validar exatamente o MP4 autorizado
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          FILE="assets/kit-controle-facil-quanto-entrou-hoje-final-20261109.mp4"
+          EXPECTED="39c95069c4740ccc1b4473cb63aff11253dca2183598ea2750768bab22a61b32"
+          for URL in "https://at.adobe.com/dMweooTDIqy9MVuI" "https://at.adobe.com/8hClSdJUiVbfbbxg"; do
+            if curl --fail --location --silent --show-error --retry 2 --max-time 150 "$URL" --output "$FILE"; then
+              FOUND="$(sha256sum "$FILE" | awk '{print $1}')"
+              if [ "$FOUND" = "$EXPECTED" ]; then
+                echo "MP4 exato confirmado por SHA-256"
+                break
+              fi
+            fi
+          done
+          echo "$EXPECTED  $FILE" | sha256sum --check
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=p=0 "$FILE"
+
+      - name: Disponibilizar este video novo no repositorio
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/kit-controle-facil-quanto-entrou-hoje-final-20261109.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m "Adicionar MP4 final distinto Quanto Entrou Hoje 09nov"
+            git push origin HEAD:main
+          fi
+
+      - name: Consultar historico Buffer e publicar em 3 redes sem duplicar
+        run: |
+          python3 -m py_compile automation/buffer_publicar_quanto_09nov.py
+          python3 automation/buffer_publicar_quanto_09nov.py
