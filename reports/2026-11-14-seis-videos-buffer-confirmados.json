@@ -19,8 +19,7 @@
       "sha256": "f95e5a0a077d7f7aa6f01465a9868f99fdf2e307932b3489516906f89355cfdf",
       "caption": "Você vende bastante, mas sabe quanto realmente sobra? 💚 Organize vendas e despesas com o Kit Controle Fácil Excel. Conheça: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #PequenosNegocios #ControleFinanceiro",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "PUBLISHED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T19:31:00-03:00",
       "posts": [
         {
@@ -41,7 +40,12 @@
           "status": "sent",
           "url": "https://www.facebook.com/reel/4326691504129799/"
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "instagram": "6af8e13a11546cac2267a38b",
+        "tiktok": "6af8e13a11546cac2267a38c",
+        "facebook": "6af8e13a11546cac2267a38a"
+      }
     },
     {
       "sequence": 2,
@@ -51,8 +55,7 @@
       "sha256": "c963d62c407677884e05b0eb262f986fc06fe9f073d80026f184e734aa17c5a5",
       "caption": "Na barbearia, cada horário e cada despesa contam. ✂️ Organize suas informações e acompanhe os resultados do seu negócio com o Kit Controle Fácil Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Barbearia #Empreendedorismo",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "PUBLISHED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T19:41:00-03:00",
       "posts": [
         {
@@ -73,7 +76,12 @@
           "status": "sent",
           "url": "https://www.facebook.com/reel/1620781003155324/"
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "instagram": "6af8e3223a4798f11f2e4ee0",
+        "tiktok": "6af8e3223a4798f11f2e4ee1",
+        "facebook": "6af8e3223a4798f11f2e4edf"
+      }
     },
     {
       "sequence": 3,
@@ -83,8 +91,7 @@
       "sha256": "fd1a9b331233c6bf5c7637a9699396d57c2259e820435e6ade7c6c7eeed18023",
       "caption": "Os pedidos não param? 🍰 Entre encomendas e despesas, organização faz diferença. Conheça o Kit Controle Fácil Excel: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Confeitaria #GestaoDeNegocios",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "PUBLISHED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T19:51:00-03:00",
       "posts": [
         {
@@ -105,7 +112,12 @@
           "status": "sent",
           "url": "https://www.instagram.com/reel/DfvUdvDkdog/"
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "facebook": "6af8e3c26deb740af635d515",
+        "tiktok": "6af8e3c26deb740af635d517",
+        "instagram": "6af8e3c26deb740af635d516"
+      }
     },
     {
       "sequence": 4,
@@ -115,8 +127,7 @@
       "sha256": "d4d3e77faa3ed897d5602e3c2cc667dae4eaec8534eb7e2a61e0150a913dea99",
       "caption": "Por trás de cada arranjo há uma floricultura que precisa de organização. 🌸 Cuide das vendas, despesas e estoque com o Kit Controle Fácil Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Floricultura #Empreendedorismo",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "SCHEDULED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T20:01:00-03:00",
       "posts": [
         {
@@ -137,7 +148,12 @@
           "status": "scheduled",
           "url": null
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "facebook": "6af8e4b80547669445985fed",
+        "tiktok": "6af8e4b80547669445985fef",
+        "instagram": "6af8e4b80547669445985fee"
+      }
     },
     {
       "sequence": 5,
@@ -147,8 +163,7 @@
       "sha256": "1212e2160e8a1831f85b7f385ceaf7e05943d5e7f59e24383188235ffcf8cefd",
       "caption": "Seu estoque está em dia? 🌷 Acompanhe entradas, saídas e a hora de repor com o Kit Controle Fácil Excel. Saiba mais: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Estoque #PequenosNegocios",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "SCHEDULED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T20:11:00-03:00",
       "posts": [
         {
@@ -169,7 +184,12 @@
           "status": "scheduled",
           "url": null
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "tiktok": "6af8e57598a7764872b3bfd5",
+        "facebook": "6af8e57598a7764872b3bfd3",
+        "instagram": "6af8e57598a7764872b3bfd4"
+      }
     },
     {
       "sequence": 6,
@@ -179,8 +199,7 @@
       "sha256": "43465fa662286c2b1e71afea350e65007fa03999ea151a05cc44249e8623bbd1",
       "caption": "Lívia tem uma confeitaria e muitas encomendas para organizar. 🍓 Descubra uma forma prática de acompanhar vendas e despesas no Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Confeitaria #Empreendedorismo",
       "publicMp4Url": null,
-      "bufferPostIds": null,
-      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "status": "SCHEDULED_ALL_THREE_NETWORKS",
       "scheduledAt": "2026-11-14T20:21:00-03:00",
       "posts": [
         {
@@ -201,7 +220,12 @@
           "status": "scheduled",
           "url": null
         }
-      ]
+      ],
+      "bufferPostIds": {
+        "facebook": "6af8e5d98ebfb1289b76cef1",
+        "instagram": "6af8e5d98ebfb1289b76cef2",
+        "tiktok": "6af8e5d98ebfb1289b76cef3"
+      }
     }
   ]
 }
