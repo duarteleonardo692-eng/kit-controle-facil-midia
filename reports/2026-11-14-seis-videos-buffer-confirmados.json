@@ -1,0 +1,207 @@
+{
+  "campaign": "Kit Controle Fácil — 6 vídeos",
+  "date": "2026-11-14",
+  "timezone": "America/Sao_Paulo",
+  "method": "Drive original MP4 → direct Buffer upload; GitHub manifest and audit record. No Actions executed. No Metricool.",
+  "hashValidation": "All six original SHA-256 values matched; valid H264/AAC MP4.",
+  "duplicateReview": "No matching campaign entries found before sending. Exactly 18 distinct Buffer IDs, one per video/network. No duplicate submissions created.",
+  "notes": [
+    "Times are Buffer due times; actual social network processing may finish later.",
+    "Upload delays and UI timeouts were resolved by checking current state before continuing.",
+    "Two automatic review blocks for alleged caption mismatch were resolved by downloading the uploaded media and confirming SHA-256 and exact manifest caption."
+  ],
+  "videos": [
+    {
+      "sequence": 1,
+      "title": "Lojista — Quanto sobra?",
+      "driveFileId": "1T4lCid9a-2ZBnx1ILSvY5PWwCcAEOa26",
+      "driveViewUrl": "https://drive.google.com/file/d/1T4lCid9a-2ZBnx1ILSvY5PWwCcAEOa26/view",
+      "sha256": "f95e5a0a077d7f7aa6f01465a9868f99fdf2e307932b3489516906f89355cfdf",
+      "caption": "Você vende bastante, mas sabe quanto realmente sobra? 💚 Organize vendas e despesas com o Kit Controle Fácil Excel. Conheça: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #PequenosNegocios #ControleFinanceiro",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T19:31:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e13a11546cac2267a38b",
+          "network": "instagram",
+          "status": "sent",
+          "url": "https://www.instagram.com/reel/DfvSSbgjMiE/"
+        },
+        {
+          "bufferId": "6af8e13a11546cac2267a38c",
+          "network": "tiktok",
+          "status": "sent",
+          "url": "https://tiktok.com/@kitcontrolefacil.br/video/7708156990249258241"
+        },
+        {
+          "bufferId": "6af8e13a11546cac2267a38a",
+          "network": "facebook",
+          "status": "sent",
+          "url": "https://www.facebook.com/reel/4326691504129799/"
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "title": "Rafael — A cadeira vazia",
+      "driveFileId": "1Rbc5Kl5hj3MLCn7rwKh87XMd9lAEm7of",
+      "driveViewUrl": "https://drive.google.com/file/d/1Rbc5Kl5hj3MLCn7rwKh87XMd9lAEm7of/view",
+      "sha256": "c963d62c407677884e05b0eb262f986fc06fe9f073d80026f184e734aa17c5a5",
+      "caption": "Na barbearia, cada horário e cada despesa contam. ✂️ Organize suas informações e acompanhe os resultados do seu negócio com o Kit Controle Fácil Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Barbearia #Empreendedorismo",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T19:41:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e3223a4798f11f2e4ee0",
+          "network": "instagram",
+          "status": "sent",
+          "url": "https://www.instagram.com/reel/DfvTUk7kqOx/"
+        },
+        {
+          "bufferId": "6af8e3223a4798f11f2e4ee1",
+          "network": "tiktok",
+          "status": "sent",
+          "url": "https://tiktok.com/@kitcontrolefacil.br/video/7708160848438512904"
+        },
+        {
+          "bufferId": "6af8e3223a4798f11f2e4edf",
+          "network": "facebook",
+          "status": "sent",
+          "url": "https://www.facebook.com/reel/1620781003155324/"
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "title": "Confeitaria — Os pedidos não param",
+      "driveFileId": "1XQlZQdh4sPjfQ8JFTmHcuYrd1deBwrKE",
+      "driveViewUrl": "https://drive.google.com/file/d/1XQlZQdh4sPjfQ8JFTmHcuYrd1deBwrKE/view",
+      "sha256": "fd1a9b331233c6bf5c7637a9699396d57c2259e820435e6ade7c6c7eeed18023",
+      "caption": "Os pedidos não param? 🍰 Entre encomendas e despesas, organização faz diferença. Conheça o Kit Controle Fácil Excel: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Confeitaria #GestaoDeNegocios",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T19:51:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e3c26deb740af635d515",
+          "network": "facebook",
+          "status": "sent",
+          "url": "https://facebook.com/1428520837009443_122110043955534709"
+        },
+        {
+          "bufferId": "6af8e3c26deb740af635d517",
+          "network": "tiktok",
+          "status": "sent",
+          "url": "https://tiktok.com/@kitcontrolefacil.br/video/7708163437347605781"
+        },
+        {
+          "bufferId": "6af8e3c26deb740af635d516",
+          "network": "instagram",
+          "status": "sent",
+          "url": "https://www.instagram.com/reel/DfvUdvDkdog/"
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "title": "Clara — Flores, sonhos e números",
+      "driveFileId": "1AqrrBLtpB5xq7ubPeSkys-jAW2SN330t",
+      "driveViewUrl": "https://drive.google.com/file/d/1AqrrBLtpB5xq7ubPeSkys-jAW2SN330t/view",
+      "sha256": "d4d3e77faa3ed897d5602e3c2cc667dae4eaec8534eb7e2a61e0150a913dea99",
+      "caption": "Por trás de cada arranjo há uma floricultura que precisa de organização. 🌸 Cuide das vendas, despesas e estoque com o Kit Controle Fácil Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Floricultura #Empreendedorismo",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T20:01:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e4b80547669445985fed",
+          "network": "facebook",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e4b80547669445985fef",
+          "network": "tiktok",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e4b80547669445985fee",
+          "network": "instagram",
+          "status": "scheduled",
+          "url": null
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "title": "Floricultura — Estoque sem surpresas",
+      "driveFileId": "1wD5o2l0aORAMfhlbTSZ3dUU3Gfe-a2dJ",
+      "driveViewUrl": "https://drive.google.com/file/d/1wD5o2l0aORAMfhlbTSZ3dUU3Gfe-a2dJ/view",
+      "sha256": "1212e2160e8a1831f85b7f385ceaf7e05943d5e7f59e24383188235ffcf8cefd",
+      "caption": "Seu estoque está em dia? 🌷 Acompanhe entradas, saídas e a hora de repor com o Kit Controle Fácil Excel. Saiba mais: https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Estoque #PequenosNegocios",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T20:11:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e57598a7764872b3bfd5",
+          "network": "tiktok",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e57598a7764872b3bfd3",
+          "network": "facebook",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e57598a7764872b3bfd4",
+          "network": "instagram",
+          "status": "scheduled",
+          "url": null
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "title": "Lívia — A confeitaria",
+      "driveFileId": "1yItEbScImCu0JX9yKrIwNZEV4WKaAuJK",
+      "driveViewUrl": "https://drive.google.com/file/d/1yItEbScImCu0JX9yKrIwNZEV4WKaAuJK/view",
+      "sha256": "43465fa662286c2b1e71afea350e65007fa03999ea151a05cc44249e8623bbd1",
+      "caption": "Lívia tem uma confeitaria e muitas encomendas para organizar. 🍓 Descubra uma forma prática de acompanhar vendas e despesas no Excel. https://kit-controle-facil-site.pages.dev/ #KitControleFacil #Confeitaria #Empreendedorismo",
+      "publicMp4Url": null,
+      "bufferPostIds": null,
+      "status": "REQUIRES_BINARY_HOSTING_AND_BUFFER_DUPLICATE_CHECK",
+      "scheduledAt": "2026-11-14T20:21:00-03:00",
+      "posts": [
+        {
+          "bufferId": "6af8e5d98ebfb1289b76cef1",
+          "network": "facebook",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e5d98ebfb1289b76cef2",
+          "network": "instagram",
+          "status": "scheduled",
+          "url": null
+        },
+        {
+          "bufferId": "6af8e5d98ebfb1289b76cef3",
+          "network": "tiktok",
+          "status": "scheduled",
+          "url": null
+        }
+      ]
+    }
+  ]
+}
