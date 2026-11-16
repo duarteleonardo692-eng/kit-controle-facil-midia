@@ -52,10 +52,14 @@
           "externalLink": null
         },
         "tiktok": {
-          "status": "request_started"
+          "id": "6afb8672f83aaca8f391080b",
+          "status": "sending",
+          "dueAt": "2026-11-16T22:40:50.087Z",
+          "sentAt": null,
+          "externalLink": null
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:40:48.505273+00:00"
+  "checked_at": "2026-11-16T22:41:00.275574+00:00"
 }
