@@ -12,22 +12,22 @@
           "id": "6afb86363e42cd001e356497",
           "status": "sent",
           "dueAt": "2026-11-16T22:39:50.336Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:39:56.803Z",
+          "externalLink": "https://www.facebook.com/reel/1129873099891804/"
         },
         "instagram": {
           "id": "6afb86403e42cd001e356712",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:40:00.728Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:40:58.916Z",
+          "externalLink": "https://www.instagram.com/reel/Df0czKmijEp/"
         },
         "tiktok": {
           "id": "6afb864df83aaca8f390f6ea",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:40:13.806Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:41:56.407Z",
+          "externalLink": "https://tiktok.com/@kitcontrolefacil.br/video/7708902847676550406"
         }
       }
     },
@@ -41,22 +41,22 @@
           "id": "6afb865af83aaca8f390fac7",
           "status": "sent",
           "dueAt": "2026-11-16T22:40:26.964Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:40:33.948Z",
+          "externalLink": "https://www.facebook.com/reel/4950546845272011/"
         },
         "instagram": {
           "id": "6afb86654b26315855a4bda8",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:40:37.049Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:41:35.720Z",
+          "externalLink": "https://www.instagram.com/reel/Df0c3VPJdoZ/"
         },
         "tiktok": {
           "id": "6afb8672f83aaca8f391080b",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:40:50.087Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:41:32.198Z",
+          "externalLink": "https://tiktok.com/@kitcontrolefacil.br/video/7708903004862303506"
         }
       }
     },
@@ -70,25 +70,25 @@
           "id": "6afb867f85dca6b14a0394e2",
           "status": "sent",
           "dueAt": "2026-11-16T22:41:03.453Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:41:11.107Z",
+          "externalLink": "https://facebook.com/1428520837009443_122110788621534709"
         },
         "instagram": {
           "id": "6afb868a4b26315855a4ca5e",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:41:14.813Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:42:13.373Z",
+          "externalLink": "https://www.instagram.com/reel/Df0c8E_lSO-/"
         },
         "tiktok": {
           "id": "6afb8697f83aaca8f39112ee",
-          "status": "sending",
+          "status": "sent",
           "dueAt": "2026-11-16T22:41:28.018Z",
-          "sentAt": null,
-          "externalLink": null
+          "sentAt": "2026-11-16T22:42:10.174Z",
+          "externalLink": "https://tiktok.com/@kitcontrolefacil.br/video/7708903127906389249"
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:41:38.263711+00:00"
+  "checked_at": "2026-11-16T22:42:26.824679+00:00"
 }
