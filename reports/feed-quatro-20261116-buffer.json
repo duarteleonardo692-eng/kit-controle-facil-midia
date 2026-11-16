@@ -67,8 +67,11 @@
           "reconciliation_required": true
         },
         "facebook": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:21:17.975Z"
+          "id": "6afb8aea4b26315855a63e72",
+          "status": "scheduled",
+          "due_at": "2026-11-16T23:21:17.975Z",
+          "requested_due_at": "2026-11-16T23:21:17.975Z",
+          "origin": "created"
         }
       }
     },
@@ -93,5 +96,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:59:52.914758+00:00"
+  "updated_at": "2026-11-16T22:59:54.603652+00:00"
 }
