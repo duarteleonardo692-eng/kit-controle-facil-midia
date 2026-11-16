@@ -44,7 +44,21 @@
           "reconciliation_required": true
         }
       }
+    },
+    "03_despesas": {
+      "topic": "Despesas e fluxo do negocio",
+      "marker": "#CFDespesasFeed16Nov26",
+      "file": "assets/kit-post-03_despesas-20261116.jpg",
+      "sha256": "45364f3d3d354d0cc0f47c9d44b1a7be93d777116c3128cccbc1c2248bfe8d42",
+      "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-post-03_despesas-20261116.jpg",
+      "caption": "💸 Vender é importante. Mas você sabe para onde vai o dinheiro?\n\nOrganize despesas, acompanhe entradas e saídas e entenda melhor os números do negócio com o Kit Controle Fácil Excel. Veja as prévias e escolha com informação.\n\n🌐 Conheça o site: https://kit-controle-facil-site.pages.dev/\n🛍️ Visite nossa loja: https://kit-controle-facil-site.pages.dev/loja/\nNo Instagram, acesse o link do perfil.\n\n#KitControleFacil #Despesas #OrganizacaoFinanceira #PequenosNegocios #CFDespesasFeed16Nov26",
+      "destinations": {
+        "facebook": {
+          "status": "request_started",
+          "requested_due_at": "2026-11-16T23:18:13.568Z"
+        }
+      }
     }
   },
-  "updated_at": "2026-11-16T22:56:22.525291+00:00"
+  "updated_at": "2026-11-16T22:56:23.766592+00:00"
 }
