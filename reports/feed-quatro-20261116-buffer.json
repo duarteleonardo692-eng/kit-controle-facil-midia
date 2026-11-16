@@ -65,6 +65,10 @@
           "status": "submission_error",
           "detail": "name 'service' is not defined",
           "reconciliation_required": true
+        },
+        "facebook": {
+          "status": "request_started",
+          "requested_due_at": "2026-11-16T23:21:17.975Z"
         }
       }
     },
@@ -89,5 +93,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:59:51.549915+00:00"
+  "updated_at": "2026-11-16T22:59:52.914758+00:00"
 }
