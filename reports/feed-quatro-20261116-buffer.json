@@ -93,11 +93,14 @@
           "origin": "created"
         },
         "instagram": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:31:17.975Z"
+          "id": "6afb8af9f83aaca8f392a6e6",
+          "status": "scheduled",
+          "due_at": "2026-11-16T23:31:17.975Z",
+          "requested_due_at": "2026-11-16T23:31:17.975Z",
+          "origin": "created"
         }
       }
     }
   },
-  "updated_at": "2026-11-16T23:00:06.628960+00:00"
+  "updated_at": "2026-11-16T23:00:10.096846+00:00"
 }
