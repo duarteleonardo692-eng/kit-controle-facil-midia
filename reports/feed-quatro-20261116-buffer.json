@@ -91,11 +91,14 @@
           "reconciliation_required": true
         },
         "facebook": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:31:17.975Z"
+          "id": "6afb8af34b26315855a6421c",
+          "status": "scheduled",
+          "due_at": "2026-11-16T23:31:17.975Z",
+          "requested_due_at": "2026-11-16T23:31:17.975Z",
+          "origin": "created"
         }
       }
     }
   },
-  "updated_at": "2026-11-16T23:00:01.393620+00:00"
+  "updated_at": "2026-11-16T23:00:03.862806+00:00"
 }
