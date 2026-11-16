@@ -63,7 +63,7 @@ def public_link(item):
         except (urllib.error.URLError,TimeoutError,OSError):pass
         time.sleep(6)
     raise RuntimeError("Arte indisponivel publicamente no GitHub: "+path.name)
-def create_post(token, channel_id, item, url, due_at):
+def create_post(token, service, channel_id, item, url, due_at):
     schedule=(" mode: shareNow " if due_at is None else
               " mode: customScheduled dueAt: "+gql_string(due_at)+" ")
     metadata=(" metadata: { facebook: { type: post } } " if service=="facebook" else
@@ -107,7 +107,7 @@ def main():
                 checkpoint(report);print("JA_EXISTE",it["slug"],service,flush=True);continue
             previous=post["destinations"].get(service)
             # O Buffer respondeu MutationError sem criar ID; esta falha especifica e segura para nova tentativa.
-            if previous and previous.get("status")=="submission_error" and "require a type (post, story, or reel)" in previous.get("detail",""):
+            if previous and previous.get("status")=="submission_error" and ("require a type (post, story, or reel)" in previous.get("detail","") or previous.get("detail","")=="name 'service' is not defined"):
                 del post["destinations"][service]
                 checkpoint(report)
                 previous=None
@@ -117,7 +117,7 @@ def main():
             post["destinations"][service]={"status":"request_started","requested_due_at":due}
             checkpoint(report)
             try:
-                res=create_post(token,found[service]["id"],it,urls[it["slug"]],due)
+                res=create_post(token,service,found[service]["id"],it,urls[it["slug"]],due)
                 post["destinations"][service]={"id":res["id"],"status":res.get("status"),"due_at":res.get("dueAt"),"requested_due_at":due,"origin":"created"}
                 history[service].append({"id":res["id"],"text":it["caption"],"status":res.get("status"),"assets":[{"source":urls[it["slug"]]}]})
                 print("ACEITO_BUFFER",it["slug"],service,res,flush=True)
