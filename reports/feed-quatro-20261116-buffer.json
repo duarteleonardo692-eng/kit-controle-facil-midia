@@ -45,8 +45,11 @@
           "origin": "created"
         },
         "instagram": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:11:17.975Z"
+          "id": "6afb8ae6df36f4d8255224c9",
+          "status": "scheduled",
+          "due_at": "2026-11-16T23:11:17.975Z",
+          "requested_due_at": "2026-11-16T23:11:17.975Z",
+          "origin": "created"
         }
       }
     },
@@ -91,5 +94,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:59:48.506568+00:00"
+  "updated_at": "2026-11-16T22:59:50.246018+00:00"
 }
