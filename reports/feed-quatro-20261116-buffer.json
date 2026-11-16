@@ -91,9 +91,13 @@
           "due_at": "2026-11-16T23:31:17.975Z",
           "requested_due_at": "2026-11-16T23:31:17.975Z",
           "origin": "created"
+        },
+        "instagram": {
+          "status": "request_started",
+          "requested_due_at": "2026-11-16T23:31:17.975Z"
         }
       }
     }
   },
-  "updated_at": "2026-11-16T23:00:05.222694+00:00"
+  "updated_at": "2026-11-16T23:00:06.628960+00:00"
 }
