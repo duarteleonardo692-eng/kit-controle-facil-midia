@@ -1,0 +1,53 @@
+name: Kit Controle Facil - 4 posts feed (3 temas + afiliados)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/feed-quatro-20261116.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kit-feed-quatro-20261116
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Checkout com historico para comprovantes
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Instalar dependencias gratuitas de arte
+        run: python3 -m pip install --quiet pillow
+      - name: Verificar scripts e renderizar os 4 JPGs
+        run: |
+          python3 -m py_compile automation/gerar_feed_quatro_20261116.py automation/publicar_feed_quatro_20261116.py
+          python3 automation/gerar_feed_quatro_20261116.py
+      - name: Hospedar imagens publicas no GitHub antes de usar Buffer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/kit-post-*-20261116.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Hospedar 4 artes Kit para feed Instagram e Facebook"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Enviar via Buffer somente ao Instagram e Facebook
+        run: python3 automation/publicar_feed_quatro_20261116.py
+      - name: Salvar relatorio final se houve erro antes do checkpoint
+        if: always()
+        run: |
+          F="reports/feed-quatro-20261116-buffer.json"
+          if test -f "$F"; then
+            git add "$F"
+            if ! git diff --cached --quiet; then
+              git commit -m "Guardar relatorio do feed no Buffer"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
