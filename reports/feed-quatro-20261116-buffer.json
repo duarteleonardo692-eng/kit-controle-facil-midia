@@ -19,6 +19,10 @@
           "due_at": "2026-11-16T22:59:21.357Z",
           "requested_due_at": null,
           "origin": "created"
+        },
+        "instagram": {
+          "status": "request_started",
+          "requested_due_at": null
         }
       }
     },
@@ -83,5 +87,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:59:29.391108+00:00"
+  "updated_at": "2026-11-16T22:59:30.820460+00:00"
 }
