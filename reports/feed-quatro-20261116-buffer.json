@@ -24,7 +24,21 @@
           "reconciliation_required": true
         }
       }
+    },
+    "02_estoque": {
+      "topic": "Organizacao de estoque",
+      "marker": "#CFEstoqueFeed16Nov26",
+      "file": "assets/kit-post-02_estoque-20261116.jpg",
+      "sha256": "f3b719677e9fe35969a885eac926e24d7cefece7031074a58975b5a67adb3e77",
+      "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-post-02_estoque-20261116.jpg",
+      "caption": "📦 Produto acabando e você só percebe na hora da venda?\n\nAcompanhar quantidades e movimentações faz diferença. O Kit Controle Fácil Excel ajuda a organizar o estoque e identificar o que precisa de atenção para repor.\n\n🌐 Explore o site: https://kit-controle-facil-site.pages.dev/\n🛍️ Veja nossa loja: https://kit-controle-facil-site.pages.dev/loja/\nNo Instagram, os links estão no perfil.\n\n#KitControleFacil #Estoque #GestaoSimples #Empreendedorismo #CFEstoqueFeed16Nov26",
+      "destinations": {
+        "facebook": {
+          "status": "request_started",
+          "requested_due_at": "2026-11-16T23:08:13.568Z"
+        }
+      }
     }
   },
-  "updated_at": "2026-11-16T22:56:17.419891+00:00"
+  "updated_at": "2026-11-16T22:56:18.684542+00:00"
 }
