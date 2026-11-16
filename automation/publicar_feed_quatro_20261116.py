@@ -66,9 +66,11 @@ def public_link(item):
 def create_post(token, channel_id, item, url, due_at):
     schedule=(" mode: shareNow " if due_at is None else
               " mode: customScheduled dueAt: "+gql_string(due_at)+" ")
+    metadata=(" metadata: { facebook: { type: post } } " if service=="facebook" else
+              " metadata: { instagram: { type: post, shouldShareToFeed: true, isAiGenerated: true } } ")
     q=("mutation { createPost(input: { text: "+gql_string(item["caption"])+
        " channelId: "+gql_string(channel_id)+
-       " schedulingType: automatic "+schedule+
+       " schedulingType: automatic "+schedule+metadata+
        " assets: [{ image: { url: "+gql_string(url)+" } }]"+
        " }) { __typename ... on PostActionSuccess { post { id dueAt status } }"+
        " ... on MutationError { message } } }")
@@ -103,7 +105,13 @@ def main():
             if matches:
                 post["destinations"][service]={"id":matches[0].get("id"),"status":matches[0].get("status"),"origin":"existing"}
                 checkpoint(report);print("JA_EXISTE",it["slug"],service,flush=True);continue
-            if service in post["destinations"]:
+            previous=post["destinations"].get(service)
+            # O Buffer respondeu MutationError sem criar ID; esta falha especifica e segura para nova tentativa.
+            if previous and previous.get("status")=="submission_error" and "require a type (post, story, or reel)" in previous.get("detail",""):
+                del post["destinations"][service]
+                checkpoint(report)
+                previous=None
+            if previous:
                 print("NAO_REENVIAR_ESTADO_INCERTO",it["slug"],service,flush=True);failed=True;continue
             due=None if i==0 else (base+timedelta(minutes=(i-1)*10)).isoformat(timespec="milliseconds").replace("+00:00","Z")
             post["destinations"][service]={"status":"request_started","requested_due_at":due}
