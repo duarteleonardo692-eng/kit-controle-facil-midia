@@ -16,10 +16,14 @@
           "externalLink": null
         },
         "instagram": {
-          "status": "request_started"
+          "id": "6afb86403e42cd001e356712",
+          "status": "sending",
+          "dueAt": "2026-11-16T22:40:00.728Z",
+          "sentAt": null,
+          "externalLink": null
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:39:58.903678+00:00"
+  "checked_at": "2026-11-16T22:40:10.896159+00:00"
 }
