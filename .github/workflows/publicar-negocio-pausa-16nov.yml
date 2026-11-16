@@ -1,0 +1,67 @@
+name: Publicar comercial revisado O negocio em pausa 16 Nov
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publicar-negocio-pausa-16nov.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kit-controle-facil-negocio-pausa-16nov
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Importar somente o MP4 revisado autorizado
+        env:
+          MEDIA_SOURCE: 'https://storage.googleapis.com/vidiq-user-videos/8da217c1-01f7-46fb-be68-695f4f809c9e/cadbfb6e-3deb-4294-9fed-e6e27aa57133.mp4?GoogleAccessId=ai-proxy-20261001%40studious-pen-429.vid.io.iam.gserviceaccount.com&Expires=1795471681&Signature=ROjVVtksbO5ZNHWCHjJgTdyhf%2FuXv1C0z7ceJSmXm0gTiqCQ4cEJuEVpewJ1XbttbyNvCSLz7Zf3aZOBa2shgqLutJf4eANpudQCYsS0M4gRKpG4wNtypVTSIuXdxlToNWHPaAelDykv%2B0g0%2Bpk7yN1n5Xt2rRPlxXvl5G0BaTYRiTWKdstliFrWIO9BEX17mps8Ks%2B%2BsC50Ldf0hRWaqENhBjU5tmZ2i8s3tkxqX4%2Fhd12UK0SSTPqj7XG452YYiWLch9h76krpxmqVTMH5EEim52n2BXsmipYeSLb6LnCrJc1ui96covOSc5ziAsl5q7okR6zXRbdZzu45AlP%2BJw%3D%3D'
+        run: |
+          python3 - <<'PY'
+          import os,urllib.request,hashlib
+          from pathlib import Path
+          dest=Path("assets/kit-controle-facil-negocio-em-pausa-revisado-20261116.mp4")
+          expected="1d33571f9ec786cdf5679026975e9aec6754e1b7fe09a92072b9c43ccc8ac142"
+          if dest.exists():
+              data=dest.read_bytes()
+          else:
+              with urllib.request.urlopen(os.environ["MEDIA_SOURCE"],timeout=120) as response:
+                  data=response.read(20000001)
+          assert len(data)<20000000 and data[4:8]==b"ftyp","Invalid MP4"
+          assert hashlib.sha256(data).hexdigest()==expected,"SHA256 does not match approved video"
+          dest.parent.mkdir(parents=True,exist_ok=True)
+          dest.write_bytes(data)
+          print("Approved narrated MP4 verified:",len(data),"bytes")
+          PY
+      - name: Hospedar o video aprovado no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/kit-controle-facil-negocio-em-pausa-revisado-20261116.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m "Adicionar comercial O negocio em pausa revisado com locucao"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Publicar agora pelo Buffer e conferir resultados
+        run: |
+          python3 -m py_compile automation/publicar_buffer_16nov.py
+          python3 automation/publicar_buffer_16nov.py
+      - name: Salvar comprovantes por rede mesmo em falha parcial
+        if: always()
+        run: |
+          FILE="reports/negocio-em-pausa-20261116-buffer.json"
+          if [ -f "$FILE" ]; then
+            git add "$FILE"
+            if ! git diff --cached --quiet; then
+              git commit -m "Registrar resultado do comercial 16nov no Buffer"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
