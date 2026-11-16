@@ -21,9 +21,12 @@
           "dueAt": "2026-11-16T22:40:00.728Z",
           "sentAt": null,
           "externalLink": null
+        },
+        "tiktok": {
+          "status": "request_started"
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:40:10.896159+00:00"
+  "checked_at": "2026-11-16T22:40:12.224344+00:00"
 }
