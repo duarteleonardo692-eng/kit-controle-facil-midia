@@ -79,11 +79,12 @@
           "reconciliation_required": true
         },
         "facebook": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:30:10.523Z"
+          "status": "submission_error",
+          "detail": "name 'service' is not defined",
+          "reconciliation_required": true
         }
       }
     }
   },
-  "updated_at": "2026-11-16T22:58:36.832816+00:00"
+  "updated_at": "2026-11-16T22:58:38.111084+00:00"
 }
