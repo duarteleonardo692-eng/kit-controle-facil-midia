@@ -45,10 +45,14 @@
           "externalLink": null
         },
         "instagram": {
-          "status": "request_started"
+          "id": "6afb86654b26315855a4bda8",
+          "status": "sending",
+          "dueAt": "2026-11-16T22:40:37.049Z",
+          "sentAt": null,
+          "externalLink": null
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:40:35.486047+00:00"
+  "checked_at": "2026-11-16T22:40:47.190223+00:00"
 }
