@@ -85,11 +85,6 @@
       "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-post-04_afiliados-20261116.jpg",
       "caption": "🤝 Quer divulgar uma solução digital voltada a pequenos negócios?\n\nConheça a oportunidade de ser afiliado do Kit Controle Fácil Excel. Acesse o convite oficial para verificar cadastro, regras e condições de comissão antes de participar.\n\n🔗 Convite de afiliados: https://orbita.eduzz.com/affiliate/invite/3142098\n🌐 Conheça o produto: https://kit-controle-facil-site.pages.dev/\n🛍️ Visite nossa loja: https://kit-controle-facil-site.pages.dev/loja/\nNo Instagram, procure o convite no nosso site ou no link do perfil.\n\n#KitControleFacil #Afiliados #MarketingDeAfiliados #RendaExtra #CFAfiliadosFeed16Nov26",
       "destinations": {
-        "instagram": {
-          "status": "submission_error",
-          "detail": "name 'service' is not defined",
-          "reconciliation_required": true
-        },
         "facebook": {
           "id": "6afb8af34b26315855a6421c",
           "status": "scheduled",
@@ -100,5 +95,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T23:00:03.862806+00:00"
+  "updated_at": "2026-11-16T23:00:05.222694+00:00"
 }
