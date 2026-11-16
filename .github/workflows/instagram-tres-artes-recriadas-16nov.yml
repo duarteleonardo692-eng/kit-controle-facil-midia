@@ -1,0 +1,37 @@
+name: Kit Controle Facil - 3 artes novas somente Instagram
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "assets/kit-instagram-recriado-01_organize_negocio_vendas.jpg"
+      - "assets/kit-instagram-recriado-02_veja_na_pratica.jpg"
+      - "assets/kit-instagram-recriado-03_negocios_atendidos.jpg"
+permissions:
+  contents: write
+concurrency:
+  group: kit-instagram-tres-artes-recriadas-20261116
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - name: Obter projeto com historico
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Identificar arquivos obrigatorios e compilar codigo
+        run: |
+          python3 -m py_compile automation/publicar_tres_artes_instagram_20261116.py
+          test -s assets/kit-instagram-recriado-01_organize_negocio_vendas.jpg
+          test -s assets/kit-instagram-recriado-02_veja_na_pratica.jpg
+          test -s assets/kit-instagram-recriado-03_negocios_atendidos.jpg
+      - name: Configurar identidade para comprovantes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Publicar primeira agora e agendar mais duas com intervalo de 10 minutos - Instagram somente
+        run: python3 automation/publicar_tres_artes_instagram_20261116.py
