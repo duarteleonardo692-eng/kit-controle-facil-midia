@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/feed-quatro-20261116.yml'
+      - 'automation/publicar_feed_quatro_20261116.py'
   workflow_dispatch:
 permissions:
   contents: write
