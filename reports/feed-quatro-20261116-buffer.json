@@ -33,11 +33,6 @@
       "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-post-02_estoque-20261116.jpg",
       "caption": "📦 Produto acabando e você só percebe na hora da venda?\n\nAcompanhar quantidades e movimentações faz diferença. O Kit Controle Fácil Excel ajuda a organizar o estoque e identificar o que precisa de atenção para repor.\n\n🌐 Explore o site: https://kit-controle-facil-site.pages.dev/\n🛍️ Veja nossa loja: https://kit-controle-facil-site.pages.dev/loja/\nNo Instagram, os links estão no perfil.\n\n#KitControleFacil #Estoque #GestaoSimples #Empreendedorismo #CFEstoqueFeed16Nov26",
       "destinations": {
-        "facebook": {
-          "status": "submission_error",
-          "detail": "Buffer recusou post: Invalid post: Facebook posts require a type (post, story, or reel).",
-          "reconciliation_required": true
-        },
         "instagram": {
           "status": "submission_error",
           "detail": "Buffer recusou post: Invalid post: Instagram posts require a type (post, story, or reel).",
@@ -86,5 +81,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:58:17.258909+00:00"
+  "updated_at": "2026-11-16T22:58:18.614002+00:00"
 }
