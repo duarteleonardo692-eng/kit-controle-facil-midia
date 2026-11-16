@@ -1,0 +1,40 @@
+name: Publicar somente tres ultimos comerciais com fotos 16Nov
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publicar-tres-fotos-16nov.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kit-controle-facil-tres-fotos-16nov
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Preparar registro duravel
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 -m py_compile automation/publicar_tres_fotos_16nov.py
+      - name: Publicar apenas padaria oficina e floricultura agora pelo Buffer
+        run: python3 automation/publicar_tres_fotos_16nov.py
+      - name: Preservar comprovantes mesmo em falha parcial
+        if: always()
+        run: |
+          FILE="reports/tres-fotos-20261116-buffer.json"
+          if [ -f "$FILE" ]; then
+            git add "$FILE"
+            if ! git diff --cached --quiet; then
+              git commit -m "Salvar resultados dos tres ultimos comerciais no Buffer"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
