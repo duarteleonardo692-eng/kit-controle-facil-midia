@@ -39,11 +39,12 @@
           "reconciliation_required": true
         },
         "instagram": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:08:13.568Z"
+          "status": "submission_error",
+          "detail": "Buffer recusou post: Invalid post: Instagram posts require a type (post, story, or reel).",
+          "reconciliation_required": true
         }
       }
     }
   },
-  "updated_at": "2026-11-16T22:56:21.228084+00:00"
+  "updated_at": "2026-11-16T22:56:22.525291+00:00"
 }
