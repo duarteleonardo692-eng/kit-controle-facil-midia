@@ -59,8 +59,9 @@
           "reconciliation_required": true
         },
         "instagram": {
-          "status": "request_started",
-          "requested_due_at": "2026-11-16T23:20:10.523Z"
+          "status": "submission_error",
+          "detail": "name 'service' is not defined",
+          "reconciliation_required": true
         }
       }
     },
@@ -85,5 +86,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:58:32.664615+00:00"
+  "updated_at": "2026-11-16T22:58:33.976886+00:00"
 }
