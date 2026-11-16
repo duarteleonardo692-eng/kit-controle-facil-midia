@@ -13,11 +13,6 @@
       "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-post-01_vendas-20261116.jpg",
       "caption": "📊 Você sabe quanto vendeu hoje, sem depender da memória?\n\nRegistre as vendas e acompanhe o caixa com mais clareza usando a planilha Kit Controle Fácil Excel. Conheça as demonstrações e veja como ela pode ajudar na rotina do seu negócio.\n\n🌐 Site: https://kit-controle-facil-site.pages.dev/\n🛍️ Conheça nossa loja: https://kit-controle-facil-site.pages.dev/loja/\nNo Instagram, acesse o link do perfil.\n\n#KitControleFacil #Vendas #ControleDeCaixa #PequenosNegocios #CFVendasFeed16Nov26",
       "destinations": {
-        "facebook": {
-          "status": "submission_error",
-          "detail": "Buffer recusou post: Invalid post: Facebook posts require a type (post, story, or reel).",
-          "reconciliation_required": true
-        },
         "instagram": {
           "status": "submission_error",
           "detail": "Buffer recusou post: Invalid post: Instagram posts require a type (post, story, or reel).",
@@ -86,5 +81,5 @@
       }
     }
   },
-  "updated_at": "2026-11-16T22:56:32.654652+00:00"
+  "updated_at": "2026-11-16T22:58:10.523870+00:00"
 }
