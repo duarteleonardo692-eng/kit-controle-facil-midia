@@ -43,9 +43,12 @@
           "dueAt": "2026-11-16T22:40:26.964Z",
           "sentAt": null,
           "externalLink": null
+        },
+        "instagram": {
+          "status": "request_started"
         }
       }
     }
   },
-  "checked_at": "2026-11-16T22:40:34.099769+00:00"
+  "checked_at": "2026-11-16T22:40:35.486047+00:00"
 }
