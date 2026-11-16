@@ -1,0 +1,31 @@
+{
+  "content": "Kit Controle Facil - O negocio em pausa - revisao com locucao",
+  "sha256": "1d33571f9ec786cdf5679026975e9aec6754e1b7fe09a92072b9c43ccc8ac142",
+  "media_url": "https://raw.githubusercontent.com/duarteleonardo692-eng/kit-controle-facil-midia/main/assets/kit-controle-facil-negocio-em-pausa-revisado-20261116.mp4",
+  "caption": "Seu negócio não para. E os seus números?\n\nCom o Kit Controle Fácil Excel, organize vendas, despesas e estoque e acompanhe seu negócio com mais clareza.\n\nConheça o kit: https://kit-controle-facil-site.pages.dev/\nComprar: https://chk.eduzz.com/8017JVYK07\n\nVídeo e locução produzidos com IA. Imagem real da planilha.\n\n#KitControleFacil #PlanilhaExcel #PequenosNegocios #GestaoFinanceira #CFNegocioEmPausa16Nov26",
+  "networks": {
+    "facebook": {
+      "id": "6afb7f268dc84d52cb2c1f19",
+      "status": "sent",
+      "dueAt": "2026-11-16T22:09:42.545Z",
+      "sentAt": "2026-11-16T22:09:50.685Z",
+      "externalLink": "https://www.facebook.com/reel/1409571994590263/"
+    },
+    "instagram": {
+      "id": "6afb7f308dc84d52cb2c217f",
+      "status": "sent",
+      "dueAt": "2026-11-16T22:09:52.191Z",
+      "sentAt": "2026-11-16T22:10:50.962Z",
+      "externalLink": "https://www.instagram.com/reel/Df0ZXNQmMsc/"
+    },
+    "tiktok": {
+      "id": "6afb7f3ba2c06fdf1d771ed0",
+      "status": "sent",
+      "dueAt": "2026-11-16T22:10:04.052Z",
+      "sentAt": "2026-11-16T22:11:47.711Z",
+      "externalLink": "https://tiktok.com/@kitcontrolefacil.br/video/7708895122452172052"
+    }
+  },
+  "prior_metricool_attempt": "All three destinations failed with account limit before this Buffer submission",
+  "checked_at": "2026-11-16T22:11:49.040262+00:00"
+}
